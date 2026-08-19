@@ -363,7 +363,9 @@ export default function Index() {
             activeOpacity={0.8}
             disabled={modelStatus !== 'ready'}
           >
-            {modelStatus !== 'ready' ? (
+            {modelStatus === 'error' ? (
+              <Ionicons name="alert-circle" size={32} color="#FFFFFF" />
+            ) : modelStatus !== 'ready' ? (
               <ActivityIndicator color="#FFFFFF" size="small" />
             ) : (
               <Ionicons

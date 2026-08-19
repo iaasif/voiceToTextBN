@@ -1,7 +1,7 @@
-import { initWhisper, WhisperContext, TranscribeResult } from 'whisper.rn';
+import { Asset } from 'expo-asset';
 import { Audio } from 'expo-av';
 import * as FileSystem from 'expo-file-system/legacy';
-import { Asset } from 'expo-asset';
+import { initWhisper, TranscribeResult, WhisperContext } from 'whisper.rn';
 
 const MODEL_NAME = 'ggml-base.bin';
 const MODEL_URL = 'https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin';
@@ -87,7 +87,7 @@ export class WhisperService {
         progress: 0,
         message: userFriendlyMessage,
       });
-      throw error;
+      throw new Error(userxFriendlyMessage);
     }
   }
 
